@@ -30,6 +30,19 @@ app.get('/', (req, res) => {
     res.json({ message: 'The API is working' });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+const mongoose = require('mongoose')
+require('dotenv').config();
+
+
+mongoose.connect(process.env.MONGO_URL,{
+    dbName: process.env.DB_NAME
+}).then(
+    () => {
+        console.log('Connected to database');
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
+    }
+).catch((err) => {
+    console.log('Error connecting to database ' + err);
+})
