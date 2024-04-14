@@ -11,7 +11,7 @@ require('./db')
 
 
 app.use(bodyParser.json());
-const allowedOrigins = ["https://movie-booking-show.vercel.app/","https://movie-booking-admin.vercel.app/"]; // Add more origins as needed
+const allowedOrigins = ["https://movie-booking-show.vercel.app","https://movie-booking-admin.vercel.app"]; // Add more origins as needed
 app.use(
     cors({
         origin: function (origin, callback) {
