@@ -125,7 +125,7 @@ router.post('/addmoviescheduletoscreen', adminTokenHandler, async (req, res, nex
             movieId,
             showTime,
             notavailableseats: [],
-            showDate
+            showDate: date
         });
 
         await screen.save();
