@@ -121,7 +121,7 @@ router.post('/addmoviescheduletoscreen', adminTokenHandler, async (req, res, nex
             });
         }
         const utcDate = new Date(showDate)
-        const date = new Date(utcDate.getTime() + (utcDate.getTimezoneOffset() * 60000));
+        const date = new Date(utcDate.getTime() + ((5 * 60 + 30) * 60000));
         screen.movieSchedules.push({
             movieId,
             showTime,
