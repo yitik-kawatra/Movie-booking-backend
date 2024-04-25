@@ -294,6 +294,8 @@ router.get('/screensbymovieschedule/:city/:date/:movieid', async (req, res, next
             // screen 
 
             screen.movieSchedules.forEach(schedule => {
+                console.log("showDate",showDate)
+                console.log("bodyDate",bodyDate)
                 let showDate = new Date(schedule.showDate);
                 let bodyDate = new Date(date);
                 // console.log(showDate , bodyDate);
