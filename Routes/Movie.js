@@ -120,7 +120,8 @@ router.post('/addmoviescheduletoscreen', adminTokenHandler, async (req, res, nex
                 message: "Movie not found"
             });
         }
-        const date = new Date(showDate.getTime() + (utcDate.getTimezoneOffset() * 60000));
+        const utcDate = new Date(showDate)
+        const date = new Date(utcDate.getTime() + (utcDate.getTimezoneOffset() * 60000));
         screen.movieSchedules.push({
             movieId,
             showTime,
